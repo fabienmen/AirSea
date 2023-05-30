@@ -4,3 +4,4 @@
 <p>Size: <%= @boat.name %>m</p>
 <p>Description: <%= @boat.description %></p>
 <p><strong>Owner:</strong> <%= @boat.user.first_name %></p>
+<%= link_to "Make a reservation", new_boat_reservation_path(@boat) %>
