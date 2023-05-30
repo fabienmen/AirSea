@@ -1,0 +1,11 @@
+<h1>New Boat</h1>
+<%= simple_form_for [@boat] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :production_year %>
+  <%= f.input :size %>
+  <%= f.input :category %>
+  <%= f.input :price_daily %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+<%= link_to 'Go Back', boats_path%>
