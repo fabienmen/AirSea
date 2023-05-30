@@ -1,5 +1,5 @@
 class BoatsController < ApplicationController
-  before_action :set_boat, only: [:show]
+  before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
     @boats = Boat.all
@@ -21,6 +21,19 @@ class BoatsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @boat.update(boat_params)
+    redirect_to boat_path(@boat)
+  end
+
+  def destroy
+    @boat.destroy
+    redirect_to boats_path, status: :see_other
   end
 
   private
