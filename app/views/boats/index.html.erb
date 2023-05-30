@@ -1,6 +1,6 @@
 <% @boats.each do  |boat| %>
-  <p><strong><%= boat.name %></strong> <%= boat.production_year %></p>
+  <%= link_to boat_path(boat) do %>
+    <p><strong><%= boat.name %></strong> <%= boat.production_year %></p>
+  <% end %>
   <p>Category: <%= boat.category %></p>
-  <p>Description: <%= boat.description %></p>
-  <p><strong>Owner:</strong> <%= boat.user.first_name %></p>
 <% end %>
