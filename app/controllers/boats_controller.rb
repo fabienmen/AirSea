@@ -1,4 +1,6 @@
 class BoatsController < ApplicationController
+
+
   before_action :set_boat, only: [:show]
 
   def index
