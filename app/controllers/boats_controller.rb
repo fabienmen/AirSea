@@ -1,5 +1,5 @@
 class BoatsController < ApplicationController
-  before_action :set_boat, only: [:show, :edit, :update, :destroy]
+  before_action :set_boat, only: [:show, :edit, :update, :destroy, :reviews]
 
   def index
     @boats = Boat.all
@@ -37,6 +37,14 @@ class BoatsController < ApplicationController
   def destroy
     @boat.destroy
     redirect_to boats_path, status: :see_other
+  end
+
+  def reviews
+    @reservations = @boat.reservations
+    @reviews = []
+    @reservations.each do |reservation|
+      reservation.reviews.each { |review| @reviews << review }
+    end
   end
 
   private

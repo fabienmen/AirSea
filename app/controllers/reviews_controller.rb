@@ -1,8 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_boat, only: [:new, :create]
-  
+
   def new
-    @reservation = Reservation.find(params[:reservation_id])
     @review = Review.new
   end
 
@@ -12,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.reservation = @reservation
 
     if @review.save
-      redirect_to boatse_path
+      redirect_to boats_path
     else
       render :new, status: :unprocessable_entity
 

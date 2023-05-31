@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :boats do
     resources :reservations, only: [:new, :create, :destroy]
     resources :reviews, only: [:new, :create]
+    get :reviews, on: :member
   end
 
   resources :reservations, only: [:index]
