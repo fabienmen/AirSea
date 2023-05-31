@@ -1,19 +1,29 @@
+<div class="boat-card boat-show-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @boat.photo.key %>')">
+</div>
+
+<h1>Reviews for: <strong><%= @boat.name %></strong></h1>
 <div class="container">
-  <div class="container mt-2">
-  <div class="boat-card boat-show-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @boat.photo.key %>')">
-  </div>
-  <div class="container">
-    <div class="row">
-    <h1>Reviews for: <strong><%= @boat.name %></strong></h1>
-      <% @reviews.each do |review|  %>
-
-        <div class="card m-2">
-          <div class="card-body">
-            <p><%= review.comment %></p>
+  <div class="row g-2 justify-content-center">
+    <% @reviews.each do |review|  %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100" style="width: 300px;">
+          <div class="d-inline mx-1">
+            <%  review.rating.to_i.times do  %>
+              <i class="fa fa-star checked"></i>
+            <% end %>
+            <%  (5 - review.rating.to_i).times do  %>
+              <i class="fa fa-star"></i>
+            <% end %>
           </div>
-
+          <div class="card-body">
+            <%# <h5 class="card-title">Title</h5> %>
+              <blockquote class="blockquote mb-0">
+                <p class="card-text"><%= review.comment %></p>
+                <footer class="blockquote-footer">By <strong><%= review.reservation.user.first_name %></strong></footer>
+              </blockquote>
+          </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
