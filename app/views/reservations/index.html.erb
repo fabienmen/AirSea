@@ -1,0 +1,8 @@
+<% @reservations.each do  |reservation| %>
+  <p><strong><%= reservation.boat.name %></strong></p>
+  <p>Start date: <%= reservation.start_date %></p>
+  <p>End date: <%= reservation.end_date %></p>
+  <p>Total price: <%= reservation.price_total %></p>
+  <%= link_to "Add a review", new_boat_review_path(reservation.boat, reservation_id: reservation) %>
+    <h4>Make a review</h4>
+<% end %>
