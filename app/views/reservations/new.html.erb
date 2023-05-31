@@ -1,12 +1,17 @@
-<h1>Create a new reservation for <%= @boat.name %> Boat</h1>
-<div>
-<%= simple_form_for [@boat, @reservation] do |f| %>
-    <h2>Daily Price: <%= @boat.price_daily %></h2>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <h2>Total Price: <span ></span></h2>
-  <div class="btn btn-gradient">
-    <%= f.button :submit %>
+<div class="banner" style="background-image: url('<%= cl_image_path @boat.photo.key %>')">
+  <div class="container">
+    <h1>Create a new reservation for Boat: <br><br><strong><%= @boat.name %></strong></h1>
   </div>
-<% end %>
+</div>
+
+<div class="reservation-container">
+  <%= simple_form_for [@boat, @reservation] do |f| %>
+      <h2>Daily Price: <%= @boat.price_daily %></h2>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <hr>
+    <div class="btn btn-gradient btn-reserve">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
 </div>
