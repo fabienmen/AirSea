@@ -1,11 +1,9 @@
 class ReviewsController < ApplicationController
 
-
-
   def new
     # 1. CONFIRM IF THE BOATS PARAMS ARE CORRECT !
-    @boat = boat.find(params[:boat_id])
-    @bookmark = Bookmark.new
+    @reservation = Reservation.where(boat: params[:boat_id])
+    @review = Review.new
   end
 
   def create
