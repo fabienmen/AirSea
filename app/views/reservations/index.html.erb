@@ -1,10 +1,20 @@
-<h1>all reservations</h1>
+<div class="banner" style="background-image: url('<%= image_path "sailboat.jpeg" %>')">
+  <div class="container">
+    <h1>Sail <strong>anywhere</strong></h1>
+    <p>Find and book boat rentals, sail boats,  jet skis, yachts, speed boats, and fishing charters.</p>
+  </div>
+</div>
 
-<% @reservations.each do  |reservation| %>
-  <p><strong><%= reservation.boat.name %></strong></p>
-  <p>Start date: <%= reservation.start_date %></p>
-  <p>End date: <%= reservation.end_date %></p>
-  <p>Total price: <%= reservation.price_total %></p>
-  <%= link_to "Add a review", new_boat_review_path(reservation.boat, reservation_id: reservation) %>
-    <h4>Make a review</h4>
-<% end %>
+
+
+<div class="boats-grid">
+  <% @reservations.each do  |reservation| %>
+    <div class="card">
+      <p><strong class="card-strong"><%= reservation.boat.name %></strong></p>
+      <p><strong class="card-strong">Start date: </strong><%= reservation.start_date %></p>
+      <p><strong class="card-strong">End date: </strong><%= reservation.end_date %></p>
+      <p><strong class="card-strong">Total price: </strong><%= reservation.price_total %></p>
+      <%= link_to "Add a review", new_boat_review_path(reservation.boat, reservation_id: reservation) %>
+    </div>
+  <% end %>
+</div>
