@@ -1,4 +1,5 @@
 <h1>Create a new reservation for <%= @boat.name %> Boat</h1>
+<div>
 <%= simple_form_for [@boat, @reservation] do |f| %>
     <h2>Daily Price: <%= @boat.price_daily %></h2>
     <%= f.input :start_date %>
@@ -8,3 +9,4 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+</div>

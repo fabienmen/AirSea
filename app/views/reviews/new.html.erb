@@ -1,0 +1,7 @@
+<h3>Leave a review for: <strong><%= @boat.name %></strong></h3>
+<%= simple_form_for [@boat, @review] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating %>
+  <%= f.hidden_field :reservation_id, value: params[:reservation_id] %>
+  <%= f.submit %>
+<% end %>
