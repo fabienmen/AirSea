@@ -27,8 +27,11 @@ class BoatsController < ApplicationController
   end
 
   def update
-    @boat.update(boat_params)
-    redirect_to boat_path(@boat)
+    if @boat.update(boat_params)
+      redirect_to boat_path(@boat)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
