@@ -1,4 +1,19 @@
-<% @reviews.each do |review|  %>
-  <p><%= review.comment %></p>
-  <p><%= review.rating %></p>
-<% end %>
+<div class="container">
+  <div class="container mt-2">
+  <div class="boat-card boat-show-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @boat.photo.key %>')">
+  </div>
+  <div class="container">
+    <div class="row">
+    <h1>Reviews for: <strong><%= @boat.name %></strong></h1>
+      <% @reviews.each do |review|  %>
+
+        <div class="card m-2">
+          <div class="card-body">
+            <p><%= review.comment %></p>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
