@@ -18,6 +18,7 @@ boat10 = Boat.create(
   size: 40.5, 
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2005,
+  category: "Yacht",
   user: user1
   # boat_picture: "/"
 )
@@ -30,6 +31,7 @@ boat9 = Boat.create(
   size: 49, 
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2010,
+  category: "Catamaran",
   user: user1
   # boat_picture: "/"
 )
@@ -40,8 +42,9 @@ boat8 = Boat.create(
   name: "Moana", 
   price_daily: 150, 
   size: 50, 
-  description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
+  description: "A beautiful fishing boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2016,
+  category: "Fishing Boat",
   user: user1
   # boat_picture: "/"
 )
@@ -54,6 +57,7 @@ boat7 = Boat.create(
   size: 20, 
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 1995,
+  category: "Sailing Boat",
   user: user1
   # boat_picture: "/"
 )
@@ -66,6 +70,7 @@ boat6 = Boat.create(
   size: 60, 
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2008,
+  category: "Speedboat",
   user: user1
   # boat_picture: "/"
 )
@@ -78,6 +83,7 @@ boat5 = Boat.create(
   size: 10, 
   description: "A beautiful Jetski that will carry your dreams with the sunset on the horizon.",
   production_year: 1970,
+  category: "Jetski",
   user: user1
   # boat_picture: "/"
 )
@@ -90,6 +96,7 @@ boat4 = Boat.create(
   size: 35, 
   description: "A beautiful fishing boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2003,
+  category: "Fishing Boat",
   user: user1
   # boat_picture: "/"
 )
@@ -102,6 +109,7 @@ boat3 = Boat.create(
   size: 38, 
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2005,
+  category: "Yacht",
   user: user1
   # boat_picture: "/"
 )
@@ -114,6 +122,7 @@ boat2 = Boat.create(
   size: 40, 
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon. Enjoy riding with Dolphins for your trip!",
   production_year: 2006,
+  category: "Catamaran",
   user: user1
   # boat_picture: "/"
 )
@@ -126,6 +135,7 @@ boat1 = Boat.create(
   size: 20, 
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon. Watch whales swimming around and enjoy the majesty",
   production_year: 1995,
+  category: "Speedboat",
   user: user1
   # boat_picture: "/"
 )
