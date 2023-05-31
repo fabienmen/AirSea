@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require "open-uri"
-
 puts "Cleaning database..."
 Boat.destroy_all
 User.destroy_all
@@ -24,8 +22,7 @@ boat10 = Boat.create(
   user: user1
   # boat_picture: "/"
 )
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-Boat.last.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+Boat.last.photo.attach(io: File.open('app/assets/images/Yacht.jpeg'), filename:'Yacht.jpeg')
 puts "Created #{boat10.name}"
 
 boat9 = Boat.create(
