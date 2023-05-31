@@ -9,10 +9,11 @@ puts "Cleaning database..."
 Boat.destroy_all
 
 
-
 puts "Creating Boats..."
-10.times do ||
-boat10 = Boat.Create(
+
+names = []
+10.times do 
+  boat = Boat.Create(
   name: "Tranquility", 
   price_daily: 80, 
   size: 40.5, 
