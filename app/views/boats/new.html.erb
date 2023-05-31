@@ -1,12 +1,19 @@
-<h1>New Boat</h1>
-<%= simple_form_for [@boat] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :production_year %>
-  <%= f.input :size %>
-  <%= f.input :category %>
-  <%= f.input :price_daily %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-<%= link_to 'Go Back', boats_path%>
+<div class="banner" style="background-image: url('<%= image_path "sailboat.jpeg" %>')">
+  <div class="container">
+    <h1>Add a New Boat</h1>
+  </div>
+</div>
+
+<div class="reservation-container">
+  <%= simple_form_for [@boat] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :production_year %>
+    <%= f.input :size %>
+    <%= f.input :category %>
+    <%= f.input :price_daily %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+  <%= link_to 'Go Back', boats_path%>
+</div>
