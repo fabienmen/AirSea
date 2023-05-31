@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_boat, only: [:new, :create]
-
+  
   def new
     @reservation = Reservation.find(params[:reservation_id])
     @review = Review.new
