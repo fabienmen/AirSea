@@ -11,9 +11,9 @@
   <% @boats.each do  |boat| %>
     <div class="card">
       <%= link_to boat_path(boat) do %>
-      <div class="boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path boat.photo.key %>')">
-        <p class="boat-name"><%= boat.name %></p>
-      </div>
+        <div class="boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path boat.photo.key %>')">
+          <p class="boat-name"><%= boat.name %></p>
+        </div>
       <% end %>
       <p><strong class="card-strong"><%= boat.category %> </strong></p>
       <p><strong class="card-strong">Year: </strong><%= boat.production_year %></p>
