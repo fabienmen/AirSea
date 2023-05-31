@@ -1,6 +1,3 @@
-
-
-
 <div class="boats-grid-show">
     <div class="card card-show">
       <div class="boat-card boat-show-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @boat.photo.key %>')">
@@ -12,5 +9,7 @@
       <p><strong class="card-strong">Size: </strong><%= @boat.size %> meters</p>
       <p><%= @boat.description %></p>
       <%= link_to "Make a reservation", new_boat_reservation_path(@boat), class:"btn btn-primary" %>
+      #<%= link_to "All Reviews", reviews_boat_path %>
     </div>
 </div>
+
