@@ -5,16 +5,18 @@
   </div>
 </div>
 
-
-
 <div class="boats-grid">
   <% @reservations.each do  |reservation| %>
     <div class="card">
+      <div class="boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path reservation.boat.photo.key %>')">
+        <p class="boat-name"><%= reservation.boat.name %></p>
+      </div>
       <p><strong class="card-strong"><%= reservation.boat.name %></strong></p>
       <p><strong class="card-strong">Start date: </strong><%= reservation.start_date %></p>
       <p><strong class="card-strong">End date: </strong><%= reservation.end_date %></p>
       <p><strong class="card-strong">Total price: </strong><%= reservation.price_total %></p>
-      <%= link_to "Add a review", new_boat_review_path(reservation.boat, reservation_id: reservation) %>
+
+      <%= link_to "Add a review", new_boat_review_path(reservation.boat, reservation_id: reservation), class: "btn btn-gradient btn-reserve" %>
     </div>
   <% end %>
 </div>

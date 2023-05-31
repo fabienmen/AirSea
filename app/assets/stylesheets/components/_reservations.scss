@@ -1,0 +1,15 @@
+.reservation-container {
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+  
+}
+
+.btn-reserve {
+  border: 1px solid black;
+
+  &:hover {
+    border: 1px solid blue;
+    color: blue;
+  }
+}

@@ -25,7 +25,7 @@ class ReservationsController < ApplicationController
       @total = @last_date.to_i - @first_date.to_i
       @reservation.price_total = @total * @boat.price_daily.to_i
       if @reservation.save
-        redirect_to boats_path, notice: "Reservation was created."
+        redirect_to reservations_path, notice: "Reservation was created."
       else
         render :new, status: :unprocessable_entity
       end
