@@ -3,6 +3,13 @@ class BoatsController < ApplicationController
 
   def index
     @boats = Boat.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        boats.name @@ :query
+        OR boats.category @@ :query
+      SQL
+      @boats = @boats.where(sql_subquery, query: params[:query])
+    end
   end
 
   def new
