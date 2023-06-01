@@ -4,14 +4,17 @@
   </div>
 </div>
 
-<div class="reservation-container">
+<div class="reservation-container" data-controller="price">
   <%= simple_form_for [@boat, @reservation] do |f| %>
-      <h2>Daily Price: <%= @boat.price_daily %></h2>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
+      <h2>Daily Price: <strong data-price-target="daily"><%= @boat.price_daily %></strong></h2>
+      <div class="wrapper-form" data-price-target="form">
+        <%= f.input :start_date, wrapper_html: { data: { price_target: "start", action: "click->price#calculate_price" } } %>
+        <%= f.input :end_date, wrapper_html: { data: { price_target: "end", action: "click->price#calculate_price" } } %>
+      </div>
       <hr>
     <div class="btn btn-gradient btn-reserve">
       <%= f.button :submit %>
     </div>
   <% end %>
+  <p data-price-target="total"></p>
 </div>
