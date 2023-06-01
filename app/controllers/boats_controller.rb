@@ -21,6 +21,7 @@ class BoatsController < ApplicationController
   end
 
   def show
+    self.reviews
   end
 
   def edit
