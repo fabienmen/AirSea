@@ -10,10 +10,17 @@ class BoatsController < ApplicationController
       SQL
       @boats = @boats.where(sql_subquery, query: params[:query])
     end
+    
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {boat: boat})
+      }
+    end    
   end
 
   def user_index
-    
   end
 
   def new
