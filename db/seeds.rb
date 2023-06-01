@@ -19,7 +19,9 @@ boat10 = Boat.create(
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2005,
   category: "Yacht",
-  user: user1
+  user: user1,
+  latitude: 14.601982,
+  longitude: -61.064570
   # boat_picture: "/"
 )
 Boat.last.photo.attach(io: File.open('app/assets/images/Yacht.jpeg'), filename:'Yacht.jpeg')
@@ -32,6 +34,8 @@ boat9 = Boat.create(
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2010,
   category: "Catamaran",
+  latitude: 38.913588,
+  longitude: 1.442004,
   user: user1
   # boat_picture: "/"
 )
@@ -45,6 +49,8 @@ boat8 = Boat.create(
   description: "A beautiful fishing boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2016,
   category: "Fishing Boat",
+  latitude: 38.701689,
+  longitude: -9.168002,
   user: user1
   # boat_picture: "/"
 )
@@ -52,12 +58,14 @@ Boat.last.photo.attach(io: File.open('app/assets/images/Fishing Boat.jpeg'), fil
 puts "Created #{boat8.name}"
 
 boat7 = Boat.create(
-  name: "Boaty Boat",
+  name: "Le Papy",
   price_daily: 70,
   size: 20,
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 1995,
   category: "Sailing Boat",
+  latitude: 43.077068,
+  longitude: 5.803693,
   user: user1
   # boat_picture: "/"
 )
@@ -71,6 +79,8 @@ boat6 = Boat.create(
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2008,
   category: "Speedboat",
+  latitude: 37.063391,
+  longitude: 15.288334,
   user: user1
   # boat_picture: "/"
 )
@@ -84,6 +94,8 @@ boat5 = Boat.create(
   description: "A beautiful Jetski that will carry your dreams with the sunset on the horizon.",
   production_year: 1970,
   category: "Jetski",
+  latitude: 41.388695,
+  longitude: 9.163490,
   user: user1
   # boat_picture: "/"
 )
@@ -97,6 +109,8 @@ boat4 = Boat.create(
   description: "A beautiful fishing boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2003,
   category: "Fishing Boat",
+  latitude: 37.935442,
+  longitude: 23.687222,
   user: user1
   # boat_picture: "/"
 )
@@ -110,6 +124,8 @@ boat3 = Boat.create(
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon.",
   production_year: 2005,
   category: "Yacht",
+  latitude: -23.802957,
+  longitude: -45.397850,
   user: user1
   # boat_picture: "/"
 )
@@ -123,6 +139,8 @@ boat2 = Boat.create(
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon. Enjoy riding with Dolphins for your trip!",
   production_year: 2006,
   category: "Catamaran",
+  latitude: -36.815395,
+  longitude: -73.086526,
   user: user1
   # boat_picture: "/"
 )
@@ -136,6 +154,8 @@ boat1 = Boat.create(
   description: "A beautiful sail boat that will carry your dreams with the sunset on the horizon. Watch whales swimming around and enjoy the majesty",
   production_year: 1995,
   category: "Speedboat",
+  latitude: 33.742760,
+  longitude: -118.232665,
   user: user1
   # boat_picture: "/"
 )
