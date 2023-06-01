@@ -1,16 +1,28 @@
-.boats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 24px;
-  gap: 12px;
+.container {
+  margin: 6px auto;
+  width: 100%;
 }
 
-.boats-grid-show {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 24px;
-  gap: 12px;
+.boats-grid {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 24px auto;
 }
+
+.map-box {
+  width: 40%;
+  background-color: black;
+  border-radius: 8px;
+  margin: 24px auto;
+}
+
+// .boats-grid-show {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   margin: 24px;
+//   gap: 12px;
+// }
 
 .boat-card-show {
   height: 600px;
@@ -45,6 +57,7 @@
   width: 300px;
   border-radius: 8px;
   font-size: 14px;
+  margin: 0 10px 20px 10px;
 }
 
 .card-strong {

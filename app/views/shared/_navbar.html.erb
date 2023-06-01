@@ -18,10 +18,10 @@
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://talenthouse-res.cloudinary.com/image/upload/c_limit,fl_progressive,h_1280,w_1280/v1592425505/user-437610/profile/nxpntcow8qupexddhny7.jpg", class: "avatar", alt: "dropdown menu" %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My boats", boats_path, class: "dropdown-item" %>
+              <%= link_to "My boats",  my_boats_path, class: "dropdown-item" %>
               <%= link_to "My reservations", reservations_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>

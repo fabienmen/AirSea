@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
     get :reviews, on: :member
   end
-
   resources :reservations, only: [:index]
+
+  get "/my_boats", to: "boats#user_index"
 end
