@@ -12,6 +12,10 @@ class BoatsController < ApplicationController
     end
   end
 
+  def user_index
+    
+  end
+
   def new
     @boat = Boat.new
   end
