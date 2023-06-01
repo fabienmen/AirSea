@@ -13,7 +13,8 @@ class BoatsController < ApplicationController
   end
 
   def user_index
-    
+    @boats = Boat.all
+    @boats = @boats.where(user_id: current_user)
   end
 
   def new
