@@ -1,6 +1,18 @@
 <div class="banner" style="background-image: url('<%= image_path "Speedboat.jpeg" %>')">
   <div class="container">
     <h1>Find <strong>the best boats available</strong></h1>
+    <div class="row justify-content-left">
+      <div class="col-sm-4 my-3">
+        <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search for: Name, Category, Location"
+          %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
