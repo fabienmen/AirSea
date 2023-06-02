@@ -81,11 +81,22 @@
   padding: 0;
 }
 
+.cards-index1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 0;
+}
+
 .card-strong {
   font-size: 15px;
 }
 
-
+.center-div {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
 
 .card > p {
   padding-left: 8px;

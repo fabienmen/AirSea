@@ -1,13 +1,27 @@
-<h1>Edit Boat</h1>
-<%= simple_form_for [@boat] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :production_year %>
-  <%= f.input :size %>
-  <%= f.input :category %>
-  <%= f.input :price_daily %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-<%= link_to 'Go Back', boat_path(@boat)%>
+<div class="banner" style="background-image: url('<%= image_path "sailboat.jpeg" %>')">
+  <div class="reservation-container">
+    <h1>Update <%= @boat.name %></h1>
+  </div>
+</div>
+<br>
+<div class="container p-3">
+  <div class="card p-3 w-75 mx-auto">
+    <div class="reservation-container">
+    <h4>Please enter the details of your boat below:</h4>
+    <br>
+      <%= simple_form_for [@boat] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :production_year %>
+        <%= f.input :size %>
+        <%= f.input :category %>
+        <%= f.input :price_daily %>
+        <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
+        <br>
+        <%= f.submit class: "btn btn-reserve" %>
+      <% end %>
+      <%= link_to 'Cancel', boats_path, class: "btn btn-reserve1" %>
+    </div>
+  </div>
+</div>
