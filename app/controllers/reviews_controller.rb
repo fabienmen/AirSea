@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
       redirect_to boats_path
     else
       render :new, status: :unprocessable_entity
-
     end
   end
 
