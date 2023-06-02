@@ -20,10 +20,18 @@ class ReservationsController < ApplicationController
       @reservation.boat = @boat
       @reservation.user = @user
       @reservation.price_daily = @boat.price_daily
-      @first_date = params[:reservation]["start_date(3i)"]
-      @last_date = params[:reservation]["end_date(3i)"]
-      @total = @last_date.to_i - @first_date.to_i
-      @reservation.price_total = @total * @boat.price_daily.to_i
+      @first_day = params[:reservation]["start_date(3i)"]
+      @first_month = params[:reservation]["start_date(2i)"]
+      @first_year = params[:reservation]["start_date(1i)"]
+      @last_day = params[:reservation]["end_date(3i)"]
+      @last_month = params[:reservation]["end_date(2i)"]
+      @last_year = params[:reservation]["end_date(1i)"]
+      start_date = Date.parse("#{@first_day}-#{@first_month}-#{@first_year}")
+      end_date = Date.parse("#{@last_day}-#{@last_month}-#{@last_year}")
+
+      @total = end_date - start_date
+
+      @reservation.price_total = @total.to_i * @boat.price_daily.to_i
       if @reservation.save
         redirect_to reservations_path, notice: "Reservation was created."
       else

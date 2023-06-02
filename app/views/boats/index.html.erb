@@ -17,11 +17,8 @@
   </div>
 </div>
 
-
-
 <div class="container mt-3">
   <div class="row">
-
     <div class="col-8 ml-0 cards-index">
       <% @boats.each do |boat| %>
         <%= link_to boat_path(boat), style:"text-decoration: none; color: black" do %>
@@ -33,7 +30,11 @@
                 <h5 class="card-tile">$<%= boat.price_daily %></h5>
               </div>
               <p class="card-text"><%= boat.category %></p>
-              <p class="stars">⭐️⭐️⭐️⭐️⭐️</p>
+              <p class="stars">
+                <% boat.average_review.to_i.times do %>
+                  ⭐️
+                <% end %>
+              </p>
               </div>
           </div>
         <% end %>
