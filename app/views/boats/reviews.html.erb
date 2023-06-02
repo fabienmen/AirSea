@@ -6,8 +6,8 @@
   <div class="row g-2 justify-content-center">
     <% @reviews.each do |review|  %>
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100" style="width: 300px;">
-          <div class="d-inline mx-1">
+        <div class="card h-100">
+          <div class="d-inline m-2">
             <%  review.rating.to_i.times do  %>
               <i class="fa fa-star checked"></i>
             <% end %>

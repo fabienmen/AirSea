@@ -3,18 +3,21 @@
     <h1>Add a New Boat</h1>
   </div>
 </div>
-
-<div class="reservation-container">
-  <%= simple_form_for [@boat] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :production_year %>
-    <%= f.input :size %>
-    <%= f.input :category %>
-    <%= f.input :price_daily %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
-  <%= link_to 'Go Back', boats_path%>
+<div class="container p-3">
+  <div class="card p-3 w-75 mx-auto">
+    <div class="reservation-container">
+      <%= simple_form_for [@boat] do |f| %>
+        <%= f.input :name %>
+         <%= f.input :address %>
+        <%= f.input :production_year %>
+        <%= f.input :size %>
+        <%= f.input :category %>
+        <%= f.input :price_daily %>
+        <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to 'Go Back', boats_path%>
+    </div>
+  </div>
 </div>
