@@ -6,6 +6,7 @@
 
 <div class="boat-show-container">
   <div class="boat-content">
+    <br>
     <h4><%= @boat.description %></h4>
     <br>
     <%= link_to "Make a reservation", new_boat_reservation_path(@boat), class:"btn btn-primary float-right" %>
@@ -29,7 +30,14 @@
               <%everage = num / @reviews.size  %>
             <% end %>
           <% end %>
-          <p class="float-right review-header">Average Rating: <%= everage  %> </p>
+          <p class="float-right review-header">Average Rating: 
+            <% everage.times do %>
+            <i class="fa fa-star checked"></i>  
+            <% end %>
+            <%  (5 - everage).times do  %>
+            <i class="fa fa-star"></i>
+            <% end %>
+          </p>
         </div>
         <hr class="w-100 mx-auto">
         <div class="row g-2">
