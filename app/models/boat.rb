@@ -2,6 +2,13 @@ class Boat < ApplicationRecord
   belongs_to :user
   has_many :reservations, dependent: :destroy
   has_one_attached :photo
+  validates :name, presence: true
+  # validates :address, presence: true
+  # validates :type, presence: true
+  # validates :price_daily, presence: true
+  # validates :description, length: { minimum: 10 }
+  # validates :production_year, presence: true
+  # validates :picture, presence: true
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -12,10 +19,4 @@ class Boat < ApplicationRecord
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
-  # validates :name, presence: true
-  # validates :type, presence: true
-  # validates :price_daily, presence: true
-  # validates :size, presense: true
-  # validates :description, length: { minimum: 10 }
-  # validates :production_year, presence: true
 end
