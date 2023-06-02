@@ -21,8 +21,8 @@
           <p><strong class="card-strong"><%= reservation.boat.name %></strong></p>
           <p><strong class="card-strong">Start date: </strong><%= reservation.start_date %></p>
           <p><strong class="card-strong">End date: </strong><%= reservation.end_date %></p>
-          <p><strong class="card-strong">Total price: </strong><%= reservation.price_total %></p>
-          
+          <p><strong class="card-strong">Total price: </strong><%= reservation.price_total %>€</p>
+
           <%= link_to "Add a review", new_boat_review_path(reservation.boat, reservation_id: reservation), class: "btn btn-primary btn-review" %>
         </div>
       <% end %>
