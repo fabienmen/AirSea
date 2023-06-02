@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: url('<%= cl_image_path @boat.photo.key %>')">
-  <div class="container">
+  <div class="reservation-container">
     <h1><%= @boat.name %></h1>
   </div>
 </div>
@@ -7,6 +7,7 @@
 <div class="boat-show-container">
   <div class="boat-content">
     <h4><%= @boat.description %></h4>
+    <br>
     <%= link_to "Make a reservation", new_boat_reservation_path(@boat), class:"btn btn-primary float-right" %>
     <p><strong class="card-strong"><%= @boat.category %> </strong></p>
     <p><strong class="card-strong">Year: </strong><%= @boat.production_year %></p>
