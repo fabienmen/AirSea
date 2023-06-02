@@ -1,0 +1,38 @@
+.boat-show-container {
+  width: 60%;
+  margin: 24px auto;
+}
+
+.float-right {
+  float: right;
+}
+
+.reserve {
+  float: right;
+}
+
+.review-header {
+  font-size: 1.4rem;
+}
+
+.boat-images {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.boat-img {
+  border-radius: 8px;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container1 {
+  width: 100%;
+}

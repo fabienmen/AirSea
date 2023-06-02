@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: url('<%= image_path "Speedboat.jpeg" %>')">
   <div class="container">
     <h1>Find <strong>the best boats available</strong></h1>
+    
     <div class="row justify-content-left">
       <div class="col-sm-4 my-3">
         <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
@@ -18,8 +19,7 @@
 
 
 
-<div class="container">
-  <div class="row g-0">
+<div class="container-boats">
     <div class="boats-grid">
       <% @boats.each do  |boat| %>
         <div class="card">
@@ -34,8 +34,7 @@
         </div>
       <% end %>
     </div>
-    <div class="map-box">
+    <div class="map-box col-3 p-3 mb-2">
       <img src="app/assets/images/Map-example.jpg">
     </div>
-  </div>
 </div>
