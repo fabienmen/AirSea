@@ -1,12 +1,14 @@
 <div class="banner" style="background-image: url('<%= cl_image_path @boat.photo.key %>')">
-  <div class="container">
+  <div class="reservation-container">
     <h1><%= @boat.name %></h1>
   </div>
 </div>
 
 <div class="boat-show-container">
   <div class="boat-content">
+    <br>
     <h4><%= @boat.description %></h4>
+    <br>
     <%= link_to "Make a reservation", new_boat_reservation_path(@boat), class:"btn btn-primary float-right" %>
     <p><strong class="card-strong"><%= @boat.category %> </strong></p>
     <p><strong class="card-strong">Year: </strong><%= @boat.production_year %></p>
@@ -25,29 +27,40 @@
           <% end %>
           <% if @reviews.size %>
             <% if num != 0 %>
-              <%everage = num / @reviews.size  %>
+              <% everage = num / @reviews.size  %>
             <% end %>
           <% end %>
-          <p class="float-right review-header">Average Rating: <%= everage  %> </p>
+          <p class="float-right review-header">Average Rating: 
+          <% if everage %>
+            <% everage.times do %>
+            <i class="fa fa-star checked"></i>  
+            <% end %>
+            <%  (5 - everage).times do  %>
+            <i class="fa fa-star"></i>
+            <% end %>
+          <% else %>
+           No Ratings
+          <% end %>
+          </p>
         </div>
         <hr class="w-100 mx-auto">
         <div class="row g-2">
           <% @reviews.each do |review|  %>
-            <div class=“col-12 col-md-6 col-lg-4">
-              <div class=“card h-100 mx-auto” style=“width: 300px;“>
-                <div class=“d-inline mx-2”>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 mx-auto" style="width: 300px;">
+                <div class="d-inline mx-2">
                   <%  review.rating.to_i.times do  %>
-                    <i class=“fa fa-star checked”></i>
+                    <i class="fa fa-star checked"></i>
                   <% end %>
                   <%  (5 - review.rating.to_i).times do  %>
-                    <i class=“fa fa-star”></i>
+                    <i class="fa fa-star"></i>
                   <% end %>
                 </div>
-                <div class=“card-body”>
+                <div class="card-body">
                   <%# <h5 class=“card-title”>Title</h5> %>
-                    <blockquote class=“blockquote mb-0">
-                      <p class=“card-text”><%= review.comment %></p>
-                      <footer class=“blockquote-footer”>By <strong><%= review.reservation.user.first_name %></strong></footer>
+                    <blockquote class="blockquote mb-0">
+                      <p class="card-text"><%= review.comment %></p>
+                      <footer class="blockquote-footer">By <strong><%= review.reservation.user.first_name %></strong></footer>
                     </blockquote>
                 </div>
               </div>
@@ -61,5 +74,3 @@
 
 
 </div>
-
-
