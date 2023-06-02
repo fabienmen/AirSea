@@ -1,25 +1,28 @@
-<div class=“banner” style=“background-image: url(‘<%= cl_image_path @boat.photo.key %>’)“>
-  <div class=“container”>
+<div class="banner" style="background-image: url('<%= cl_image_path @boat.photo.key %>')">
+  <div class="container">
     <h1><%= @boat.name %></h1>
   </div>
 </div>
-<div class=“boat-show-container”>
-  <div class=“boat-content”>
+
+<div class="boat-show-container">
+  <div class="boat-content">
     <h4><%= @boat.description %></h4>
-    <%= link_to “Make a reservation”, new_boat_reservation_path(@boat), class:“btn btn-primary float-right” %>
-    <p><strong class=“card-strong”><%= @boat.category %> </strong></p>
-    <p><strong class=“card-strong”>Year: </strong><%= @boat.production_year %></p>
-    <p class=“float-right”><strong class=“card-strong”>Price: </strong><%= @boat.price_daily %>€/day</p>
-    <p><strong class=“card-strong”>Size: </strong><%= @boat.size %> meters</p>
+    <%= link_to "Make a reservation", new_boat_reservation_path(@boat), class:"btn btn-primary float-right" %>
+    <p><strong class="card-strong"><%= @boat.category %> </strong></p>
+    <p><strong class="card-strong">Year: </strong><%= @boat.production_year %></p>
+    <p class="float-right"><strong class="card-strong">Price: </strong><%= @boat.price_daily %>€/day</p>
+    <p><strong class="card-strong">Size: </strong><%= @boat.size %> meters</p>
   </div>
-<div class=“container1 align-content-center flex-wrap”>
-      <div class=“container”>
-        <div class=“flex”>
-          <p class=“review-header”>Reviews</p>
-          <p class=“float-right review-header”>Average Rating: </p>
+
+
+<div class="container1 align-content-center flex-wrap">
+      <div class="container">
+        <div class="flex">
+          <p class="review-header">Reviews</p>
+          <p class="float-right review-header">Average Rating: </p>
         </div>
-        <hr class=“w-100 mx-auto”>
-        <div class=“row g-2”>
+        <hr class="w-100 mx-auto">
+        <div class="row g-2">
           <% @reviews.each do |review|  %>
             <div class=“col-12 col-md-6 col-lg-4">
               <div class=“card h-100 mx-auto” style=“width: 300px;“>
@@ -44,4 +47,6 @@
         </div>
       </div>
 </div>
+
 </div>
+
