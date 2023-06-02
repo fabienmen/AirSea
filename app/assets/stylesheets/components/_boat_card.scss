@@ -56,11 +56,29 @@
 }
 
 .card {
+  position: relative;
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.2);
-  width: 45%;
+  // width: 45%;
   border-radius: 8px;
   font-size: 14px;
   margin: 0 10px 20px 10px;
+}
+
+.card:hover {
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.stars {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.cards-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 0;
 }
 
 .card-strong {

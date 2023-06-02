@@ -1,12 +1,14 @@
 <div class="banner" style="background-image: url('<%= image_path "sailboat.jpeg" %>')">
-  <div class="container">
-    <h1>Sail <strong>anywhere</strong></h1>
-    <p>Find and book boat rentals, sail boats,  jet skis, yachts, speed boats, and fishing charters.</p>
+  <div class="reservation-container">
+    <h1>Your Reservations</h1>
   </div>
 </div>
 
+<div class="reservation-container">
+<h2>Bon Voyage!</h2>
+</div>
 <div class="boats-grid">
-  <% @reservations.each do  |reservation| %>
+  <% @reservations.reverse_each do |reservation| %>
     <div class="card">
       <div class="boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path reservation.boat.photo.key %>')">
         <p class="boat-name"><%= reservation.boat.name %></p>
@@ -16,7 +18,7 @@
       <p><strong class="card-strong">End date: </strong><%= reservation.end_date %></p>
       <p><strong class="card-strong">Total price: </strong><%= reservation.price_total %></p>
       
-      <%= link_to "Add a review", new_boat_review_path(reservation.boat, reservation_id: reservation), class: "btn btn-gradient btn-reserve" %>
+      <%= link_to "Add a review", new_boat_review_path(reservation.boat, reservation_id: reservation), class: "btn btn-primary btn-review" %>
     </div>
   <% end %>
 </div>

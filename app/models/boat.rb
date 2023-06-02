@@ -3,6 +3,7 @@ class Boat < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :reviews, through: :reservations
   has_one_attached :photo
+
   validates :name, presence: true
   # validates :address, presence: true
   # validates :type, presence: true
@@ -20,4 +21,11 @@ class Boat < ApplicationRecord
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
+
+  def average_review
+    return 0 if reviews.empty?
+    
+    reviews.pluck(:rating).sum.fdiv(reviews.size)
+  end
+
 end
