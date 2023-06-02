@@ -1,20 +1,26 @@
 <div class="banner" style="background-image: url('<%= cl_image_path @boat.photo.key %>')">
-  <div class="container">
-    <h1>Create a new reservation for Boat: <br><br><strong><%= @boat.name %></strong></h1>
+  <div class="reservation-container">
+    <h1 class="">You are reserving - <strong><%= @boat.name %></strong></h1>
   </div>
 </div>
 
 <div class="reservation-container" data-controller="price">
   <%= simple_form_for [@boat, @reservation] do |f| %>
-      <h2>Daily Price: <strong data-price-target="daily"><%= @boat.price_daily %></strong></h2>
+      <h2>Daily Price:  € <strong data-price-target="daily"><%= @boat.price_daily %></strong></h2>
+      <br>
       <div class="wrapper-form" data-price-target="form">
         <%= f.input :start_date, wrapper_html: { data: { price_target: "start", action: "click->price#calculate_price" } } %>
         <%= f.input :end_date, wrapper_html: { data: { price_target: "end", action: "click->price#calculate_price" } } %>
       </div>
+      <br>
       <hr>
+      <br>
     <div class="btn btn-gradient btn-reserve">
       <%= f.button :submit %>
     </div>
   <% end %>
-  <p data-price-target="total"></p>
+  <div class="total">
+  <h2 class="tally">Total Price:  €</h2>
+  <p data-price-target="total" class="total-price"></p>
+  </div>
 </div>
