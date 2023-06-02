@@ -10,6 +10,14 @@ class BoatsController < ApplicationController
       SQL
       @boats = @boats.where(sql_subquery, query: params[:query])
     end
+
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {boat: boat})
+      }
+    end
   end
 
   def user_index
@@ -74,6 +82,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :category, :price_daily, :size, :description, :production_year, :photo)
+    params.require(:boat).permit(:name, :category, :price_daily, :size, :description, :production_year, :photo, :address)
   end
 end
