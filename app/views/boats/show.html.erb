@@ -23,7 +23,7 @@
           <% @reviews.each do |review|  %>
               <%num += review.rating.to_i  %>
           <% end %>
-          <% if @reviews.size %>
+          <% if @reviews.size > 0 %>
             <% if num != 0 %>
               <%everage = num / @reviews.size  %>
             <% end %>
