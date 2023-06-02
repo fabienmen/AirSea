@@ -19,27 +19,36 @@
 
 
 
-<div class="container-boats">
-    <div class="boats-grid">
-      <% @boats.each do  |boat| %>
-        <div class="card">
-          <%= link_to boat_path(boat) do %>
-            <div class="boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path boat.photo.key %>')">
-              <p class="boat-name"><%= boat.name %></p>
-            </div>
-          <% end %>
-          <p><strong class="card-strong"><%= boat.category %> </strong></p>
-          <p><strong class="card-strong">Year: </strong><%= boat.production_year %></p>
-          <p class="boat-price"><strong class="card-strong">Price: </strong><%= boat.price_daily %>€/day</p>
-        </div>
+<div class="container mt-3">
+  <div class="row">
+
+    <div class="col-8 ml-0 cards-index">
+      <% @boats.each do |boat| %>
+        <%= link_to boat_path(boat), style:"text-decoration: none; color: black" do %>
+          <div class="card m-0">
+            <img style="height: 150px; object-fit: cover; object-position: center" class="card-img-top" src="<%= cl_image_path boat.photo.key %>" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title"><%= boat.name %></h5>
+                <h5 class="card-tile">$<%= boat.price_daily %></h5>
+              </div>
+              <p class="card-text"><%= boat.category %></p>
+              <p class="stars">⭐️⭐️⭐️⭐️⭐️</p>
+              </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
-    <div class="map-box col-3 p-3 mb-2">
-      <img src="app/assets/images/Map-example.jpg">
-    </div>
-</div>
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="col-4">
+      <div class="card" style="width:100%">
+        <div id="map-index"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
