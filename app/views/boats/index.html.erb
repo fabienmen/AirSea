@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: url('<%= image_path "Speedboat.jpeg" %>')">
   <div class="container">
     <h1>Find <strong>the best boats available</strong></h1>
-    
+
     <div class="row justify-content-left">
       <div class="col-sm-4 my-3">
         <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
@@ -38,3 +38,8 @@
       <img src="app/assets/images/Map-example.jpg">
     </div>
 </div>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
