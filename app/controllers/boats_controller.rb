@@ -42,6 +42,13 @@ class BoatsController < ApplicationController
 
   def show
     self.reviews
+    # num = 0
+    # @reviews.each do |review|
+    #   console.log(review.rating)
+    #   raise
+    #   num += review.rating.to_i
+    # end
+    # @everage = num / self.review.size
   end
 
   def edit

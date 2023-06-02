@@ -19,7 +19,16 @@
       <div class="container">
         <div class="flex">
           <p class="review-header">Reviews</p>
-          <p class="float-right review-header">Average Rating: </p>
+          <% num = 0 %>
+          <% @reviews.each do |review|  %>
+              <%num += review.rating.to_i  %>
+          <% end %>
+          <% if @reviews.size %>
+            <% if num != 0 %>
+              <%everage = num / @reviews.size  %>
+            <% end %>
+          <% end %>
+          <p class="float-right review-header">Average Rating: <%= everage  %> </p>
         </div>
         <hr class="w-100 mx-auto">
         <div class="row g-2">
@@ -49,4 +58,8 @@
 </div>
 
 </div>
+
+
+</div>
+
 
