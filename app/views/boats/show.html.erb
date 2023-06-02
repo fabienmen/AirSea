@@ -27,16 +27,20 @@
           <% end %>
           <% if @reviews.size %>
             <% if num != 0 %>
-              <%everage = num / @reviews.size  %>
+              <% everage = num / @reviews.size  %>
             <% end %>
           <% end %>
           <p class="float-right review-header">Average Rating: 
+          <% if everage %>
             <% everage.times do %>
             <i class="fa fa-star checked"></i>  
             <% end %>
             <%  (5 - everage).times do  %>
             <i class="fa fa-star"></i>
             <% end %>
+          <% else %>
+           No Ratings
+          <% end %>
           </p>
         </div>
         <hr class="w-100 mx-auto">
